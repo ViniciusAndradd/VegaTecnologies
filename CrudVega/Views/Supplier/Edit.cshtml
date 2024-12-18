@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Editar Fornecedor";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/wwwroot/css/site.css" />
+}
+
+@model CrudVega.Models.Supplier;
+
+<h1>Editar Fornecedor</h1>
+<div class="container Supplier-Edit-container">
+    <div class="row Supplier-Edit-row">
+        <form asp-action="Edit" method="post" class="col-7 class="Supplier-Edit-formSpace">
+            <div class="row">
+                <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Nome" asp-for="Name">
+                <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Telefone" asp-for="Telephone">
+                <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="CNPJ" asp-for="CNPJ">
+                <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="CEP" asp-for="CEP">
+                <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Endereço" asp-for="Address">
+
+                <button class="btn btn-success col-12" type="submit">Cadastrar</button>
+            </div>
+        </form>
+        <br />
+        <a class="btn btn-primary col-7 Supplier-Edit-backBtn" asp-controller="Supplier" asp-action="Index">Voltar</a>
+    </div>
+</div>

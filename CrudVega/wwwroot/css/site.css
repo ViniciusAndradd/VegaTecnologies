@@ -1,0 +1,161 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input{
+    width:100%;
+}
+
+/*Home*/
+
+/*Supplier*/
+/*Index*/
+.Supplier-Index-row{
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.Supplier-Index-element {
+    margin-bottom: 15px;
+}
+
+.Supplier-Index-searchFilter {
+}
+
+.Supplier-Index-formSpace {
+    padding: 0;
+}
+
+.Supplier-Index-formData {
+    text-align:left;
+}
+
+.Supplier-Index-searchBtn {
+    margin-top: 5px;
+    width:100%;
+}
+
+/*Create*/
+.Supplier-Create-container {
+}
+
+.Supplier-Create-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Supplier-Create-formSpace {
+    margin-top:15px;
+}
+
+.Supplier-Create-formData {
+    margin-bottom: 10px;
+}
+
+.Supplier-Create-backBtn{
+   margin-top:15px;
+}
+
+/*Create*/
+.Supplier-Edit-container {
+}         
+
+.Supplier-Edit-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Supplier-Edit-formSpace {
+    margin-top: 15px;
+}
+
+.Supplier-Edit-formData {
+    margin-bottom: 10px;
+}
+
+.Supplier-Edit-backBtn {
+    margin-top: 15px;
+}
+
+
+
+/*Material*/
+/*Index*/
+.Material-Index-row {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Material-Index-element {
+    margin-bottom: 15px;
+}
+
+.Material-Index-searchFilter {
+}
+
+.Material-Index-formSpace {
+    padding: 0;
+}
+
+.Material-Index-formData {
+    text-align: left;
+}
+
+.Material-Index-searchBtn {
+    margin-top: 5px;
+    width: 100%;
+}
+
+/*Create*/
+.Material-Create-container {
+}
+
+.Material-Create-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Material-Create-formSpace {
+    margin-top: 15px;
+}
+
+.Material-Create-formData {
+    margin-bottom: 10px;
+}
+
+.Material-Create-backBtn {
+    margin-top: 15px;
+}

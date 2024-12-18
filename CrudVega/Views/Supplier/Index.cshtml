@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Fornecedores";
+
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/wwwroot/css/site.css" />
+}
+
+<h1>Fornecedores</h1>
+<div class="container">
+    <div class="row Supplier-Index-row">
+
+        <a class="btn btn-primary col-3 Supplier-Index-element" asp-controller="Supplier" asp-action="Create">Cadastrar Fornecedor +</a>
+
+        <form action="/" method="post" class="Supplier-Index-formSpace col-12">
+            <div class="Supplier-Index-searchFilter Supplier-Index-element">
+                <div class="row">
+                    <div class="col-4">
+                        <label>Nome do produto</label><br />
+                        <input type="text" name="name" value="" />
+                    </div>
+                    <div class="col-4">
+                        <label>Período inicial</label><br />
+                        <input type="date" name="name" value="" />
+                    </div>
+                    <div class="col-4">
+                        <label>Período final</label><br />
+                        <input type="date" name="name" value="" />
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary Supplier-Index-searchBtn">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <table class="table Supplier-Index-element">
+            <thead>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Nike</td>
+                    <td>40028922</td>
+                    <td>1234456</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-warning" asp-controller="Supplier" asp-action="Edit">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-controller="Supplier" asp-action="Delete">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Adidas</td>
+                    <td>40028922</td>
+                    <td>1234456</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-warning">Editar</a>
+                            <a role="button" class="btn btn-danger">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td>Puma</td>
+                    <td>40028922</td>
+                    <td>1234456</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a role="button" class="btn btn-warning">Editar</a>
+                            <a role="button" class="btn btn-danger">Excluir</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
