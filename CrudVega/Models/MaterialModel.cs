@@ -2,7 +2,7 @@
 
 namespace CrudVega.Models
 {
-    public class Material
+    public class MaterialModel
     {
         public int Id { get; set; }
 

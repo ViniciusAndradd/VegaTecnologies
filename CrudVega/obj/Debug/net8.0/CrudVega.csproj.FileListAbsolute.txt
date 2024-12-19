@@ -13,7 +13,6 @@ C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\n
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.RazorAssemblyInfo.cache
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.RazorAssemblyInfo.cs
-C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.sourcelink.json
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\staticwebassets\msbuild.CrudVega.Microsoft.AspNetCore.StaticWebAssets.props
@@ -103,3 +102,8 @@ C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\n
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.csproj.AssemblyReference.cache
 C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.csproj.Up2Date
+C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.MvcApplicationPartsAssemblyInfo.cs

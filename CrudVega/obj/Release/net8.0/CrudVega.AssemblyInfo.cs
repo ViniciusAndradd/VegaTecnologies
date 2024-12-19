@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrudVega")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+970c20e10d48c606fb7c0b47cf3d76499d260f98")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrudVega")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrudVega")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

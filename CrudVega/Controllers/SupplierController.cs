@@ -1,21 +1,26 @@
-﻿using CrudVega.Models.Context;
-using CrudVega.Models;
+﻿using CrudVega.Models;
 using Microsoft.AspNetCore.Mvc;
+using CrudVega.Context;
+using CrudVega.Repositories;
+using System.Runtime.ConstrainedExecution;
 
 namespace CrudVega.Controllers
 {
     public class SupplierController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly ISupplierRepository _supplierRepository;
 
-        public SupplierController(AppDbContext context)
+        public SupplierController(ISupplierRepository supplierRepository)
         {
-            _context = context;
+            _supplierRepository = supplierRepository;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<SupplierModel> suppliers = _supplierRepository.GetAllSuppliers();
+
+            return View(suppliers);
         }
         public IActionResult Edit()
         {
@@ -33,16 +38,13 @@ namespace CrudVega.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Supplier supplier)
+        public IActionResult CreateSupplier(SupplierModel supplier)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(supplier);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
+            supplier.CreatedAt = DateTime.Now;
+            supplier.QrCode = $"%{supplier.CNPJ}% - %{supplier.CEP}% / CAD.%{supplier.CreatedAt}%";
 
-            return View(supplier);
+            _supplierRepository.CreateSupplier(supplier);
+            return RedirectToAction("Index");
         }
     }
 }

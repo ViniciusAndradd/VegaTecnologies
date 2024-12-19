@@ -2,7 +2,7 @@
 
 namespace CrudVega.Models
 {
-    public class Supplier
+    public class SupplierModel
     {
         public int Id { get; set; }
 
@@ -21,6 +21,10 @@ namespace CrudVega.Models
 
         [StringLength(150)]
         public string Address { get; set; }
-        public DateTime CreatedAt = DateTime.Now;
+        [Required]
+        public string QrCode { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; }
     }
 }

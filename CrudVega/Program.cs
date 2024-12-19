@@ -1,8 +1,10 @@
-using CrudVega.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using CrudVega.Context;
+using CrudVega.Repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString,
         new MySqlServerVersion(new Version(8, 0, 40))));
+
+builder.Services.AddScoped<ISupplierRepository,SupplierRepository>();
 
 var app = builder.Build();
 
@@ -31,15 +35,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.MapControllers();
 
-/*Mapeamento de rotas*/
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Supplier}/{action=Create}/{id?}");
 
 app.Run();

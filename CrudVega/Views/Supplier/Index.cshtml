@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<SupplierModel>
+
+@{
     ViewData["Title"] = "Fornecedores";
 
 }
@@ -43,46 +45,28 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">CNPJ</th>
-                    <th scope="col"></th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>Nike</td>
-                    <td>40028922</td>
-                    <td>1234456</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a role="button" class="btn btn-warning" asp-controller="Supplier" asp-action="Edit">Editar</a>
-                            <a role="button" class="btn btn-danger" asp-controller="Supplier" asp-action="Delete">Excluir</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td>Adidas</td>
-                    <td>40028922</td>
-                    <td>1234456</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a role="button" class="btn btn-warning">Editar</a>
-                            <a role="button" class="btn btn-danger">Excluir</a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td>Puma</td>
-                    <td>40028922</td>
-                    <td>1234456</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <a role="button" class="btn btn-warning">Editar</a>
-                            <a role="button" class="btn btn-danger">Excluir</a>
-                        </div>
-                    </td>
-                </tr>
+                @if(Model != null && Model.Any())
+                {
+                    foreach(SupplierModel supplier in Model)
+                    {
+                        <tr>
+                            <th>@supplier.Id.ToString()</th>
+                            <td>@supplier.Name.ToString()</td>
+                            <td>@supplier.Telephone.ToString()</td>
+                            <td>@supplier.CNPJ.ToString()</td>
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <a role="button" class="btn btn-warning" asp-route-id="@supplier.Id" asp-controller="Supplier" asp-action="Edit">Editar</a>
+                                    <a role="button" class="btn btn-danger" asp-route-id="@supplier.Id"  asp-controller="Supplier" asp-action="Delete">Excluir</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
             </tbody>
         </table>
     </div>

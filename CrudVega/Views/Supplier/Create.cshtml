@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="~/wwwroot/css/site.css" />
 }
 
-@model CrudVega.Models.Supplier;
+@model CrudVega.Models.SupplierModel;
 
 <h1>Cadastrar Fornecedor</h1>
 <div class="container Supplier-Create-container">
     <div class="row Supplier-Create-row">
-        <form asp-action="Create" method="post" class="col-7 class="Supplier-Create-formSpace">
+        <form asp-action="CreateSupplier" method="post" class="col-7 Supplier-Create-formSpace">
             <div class="row">
                 <input class="form-control form-control-sm Supplier-Create-formData" type="text" placeholder="Nome" asp-for="Name">
                 <input class="form-control form-control-sm Supplier-Create-formData" type="text" placeholder="Telefone" asp-for="Telephone">
@@ -19,10 +19,10 @@
                 <input class="form-control form-control-sm Supplier-Create-formData" type="text" placeholder="CEP" asp-for="CEP">
                 <input class="form-control form-control-sm Supplier-Create-formData" type="text" placeholder="Endereço" asp-for="Address">
 
-                <button class="btn btn-success col-12" type="submit">Cadastrar</button>
+                <button class="btn btn-primary col-12" type="submit">Cadastrar</button>
             </div>
         </form>
         <br />
-        <a class="btn btn-primary col-7 Supplier-Create-backBtn" asp-controller="Supplier" asp-action="Index">Voltar</a>
+        <a class="btn btn-secondary col-7 Supplier-Create-backBtn" asp-controller="Supplier" asp-action="Index">Voltar</a>
     </div>
 </div>
