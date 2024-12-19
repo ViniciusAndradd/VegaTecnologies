@@ -107,3 +107,4 @@ C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\n
 C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\vinic\Source\Repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\vinic\source\repos\ViniciusAndradd\VegaTecnologies\CrudVega\obj\Debug\net8.0\CrudVega.sourcelink.json

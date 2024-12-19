@@ -18,12 +18,11 @@ namespace CrudVega.Repositories
             return supplier;
         }
 
-        //public SupplierModel GetSupplier(int Id)
-        //{
-        //    var supplier = _context.Suppliers.FirstOrDefault(x => x.Id == Id);
-
-        //    return supplier;
-        //}
+        public void DeleteSupplier(SupplierModel supplier)
+        {
+            _context.Suppliers.Remove(supplier);
+            _context.SaveChanges();
+        }
 
         public IEnumerable<SupplierModel> GetAllSuppliers()
         {

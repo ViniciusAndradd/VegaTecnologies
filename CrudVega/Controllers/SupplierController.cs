@@ -1,8 +1,6 @@
 ﻿using CrudVega.Models;
 using Microsoft.AspNetCore.Mvc;
-using CrudVega.Context;
 using CrudVega.Repositories;
-using System.Runtime.ConstrainedExecution;
 
 namespace CrudVega.Controllers
 {
@@ -32,9 +30,9 @@ namespace CrudVega.Controllers
             return View();
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(SupplierModel supplier)
         {
-            return View();
+            return View(supplier);
         }
 
         [HttpPost]
@@ -44,6 +42,13 @@ namespace CrudVega.Controllers
             supplier.QrCode = $"%{supplier.CNPJ}% - %{supplier.CEP}% / CAD.%{supplier.CreatedAt}%";
 
             _supplierRepository.CreateSupplier(supplier);
+            return RedirectToAction("Index");
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteSupplier(SupplierModel supplier)
+        {
+            _supplierRepository.DeleteSupplier(supplier);
             return RedirectToAction("Index");
         }
     }

@@ -1,7 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.UI;
-using System.Configuration;
-using Microsoft.Extensions.Configuration;
 using CrudVega.Context;
 using CrudVega.Repositories;
 
@@ -18,6 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 40))));
 
 builder.Services.AddScoped<ISupplierRepository,SupplierRepository>();
+builder.Services.AddScoped<IMaterialRepository, MaterialRepository>();
 
 var app = builder.Build();
 
