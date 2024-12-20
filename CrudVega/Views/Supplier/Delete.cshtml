@@ -2,4 +2,15 @@
     ViewData["Title"] = "Excluir Fornecedor";
 }
 
-<h1>Quer excluir o fornecedor?</h1>
+@model CrudVega.Models.SupplierModel
+
+<h1>Deseja excluir @Model.Name da lista de fornecedores?</h1>
+
+<form asp-action="DeleteSupplier" method="post">
+    <input type="hidden" value="@Model.Id" asp-for="Id"/>
+    <button class="btn btn-danger col-12" type="submit">Excluir</button>
+</form>
+
+
+<a class="btn btn-secondary col-12" asp-controller="Supplier" asp-action="Index">Voltar</a>
+

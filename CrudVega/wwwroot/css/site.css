@@ -83,7 +83,7 @@ input{
    margin-top:15px;
 }
 
-/*Create*/
+/*Edit*/
 .Supplier-Edit-container {
 }         
 
@@ -96,6 +96,7 @@ input{
 
 .Supplier-Edit-formSpace {
     margin-top: 15px;
+    text-align:left;
 }
 
 .Supplier-Edit-formData {
@@ -104,6 +105,11 @@ input{
 
 .Supplier-Edit-backBtn {
     margin-top: 15px;
+}
+
+.Supplier-Edit-label {
+    padding:0;
+    margin:0;
 }
 
 

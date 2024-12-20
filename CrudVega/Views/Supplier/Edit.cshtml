@@ -11,15 +11,23 @@
 <h1>Editar Fornecedor</h1>
 <div class="container Supplier-Edit-container">
     <div class="row Supplier-Edit-row">
-        <form asp-action="Edit" method="post" class="col-7 class="Supplier-Edit-formSpace">
+        <form asp-action="EditSupplier" method="post" class="col-7 Supplier-Edit-formSpace">
             <div class="row">
+                <label class="Supplier-Edit-label"><b>Nome</b></label>
                 <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Nome" asp-for="Name" value="@Model.Name.ToString()">
+                <label class="Supplier-Edit-label"><b>Telefone</b></label>
                 <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Telefone" asp-for="Telephone" value="@Model.Telephone.ToString()">
+                <label class="Supplier-Edit-label"><b>CNPJ</b></label>
                 <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="CNPJ" asp-for="CNPJ" value="@Model.CNPJ.ToString()">
+                <label class="Supplier-Edit-label"><b>CEP</b></label>
                 <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="CEP" asp-for="CEP" value="@Model.CEP.ToString()">
+                <label class="Supplier-Edit-label"><b>Endereço</b></label>
                 <input class="form-control form-control-sm Supplier-Edit-formData" type="text" placeholder="Endereço" asp-for="Address" value="@Model.Address.ToString()">
+                <input type="hidden" asp-for="Id" value="@Model.Id">
+                <input type="hidden" asp-for="QrCode" value="@Model.QrCode">
+                <input type="hidden" asp-for="CreatedAt" value="@Model.CreatedAt">
 
-                <button class="btn btn-primary col-12" type="submit">Cadastrar</button>
+                <button class="btn btn-primary col-12" type="submit">Salvar</button>
             </div>
         </form>
         <br />

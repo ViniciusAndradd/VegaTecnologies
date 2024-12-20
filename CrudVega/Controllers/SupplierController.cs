@@ -20,9 +20,17 @@ namespace CrudVega.Controllers
 
             return View(suppliers);
         }
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var supplier = _supplierRepository.GetSupplier(id);
+            if (supplier != null)
+            {
+                return View(supplier);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult Create()
@@ -30,9 +38,17 @@ namespace CrudVega.Controllers
             return View();
         }
 
-        public IActionResult Delete(SupplierModel supplier)
+        public IActionResult Delete(int id)
         {
-            return View(supplier);
+            var supplier = _supplierRepository.GetSupplier(id);
+            if (supplier != null)
+            {
+                return View(supplier);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -45,10 +61,18 @@ namespace CrudVega.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpDelete]
-        public IActionResult DeleteSupplier(SupplierModel supplier)
+        [HttpPost]
+        public IActionResult DeleteSupplier(int id)
         {
-            _supplierRepository.DeleteSupplier(supplier);
+            _supplierRepository.DeleteSupplier(id);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult EditSupplier(SupplierModel supplier)
+        {
+            _supplierRepository.EditSupplier(supplier);
             return RedirectToAction("Index");
         }
     }
