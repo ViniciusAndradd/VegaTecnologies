@@ -36,20 +36,24 @@ app.UseAuthorization();
 app.MapControllers();
 
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "default",
+//        pattern: "{controller=Home}/{action=Index}/{id?}");
 
-    endpoints.MapControllerRoute(
-        name: "DeleteSupplier",
-        pattern: "{controller=Supplier}/{action=Delete}/{id}");
-});
+//    endpoints.MapControllerRoute(
+//        name: "DeleteSupplier",
+//        pattern: "{controller=Supplier}/{action=Delete}/{id}");
+
+//    endpoints.MapControllerRoute(
+//        name: "DeleteMaterial",
+//        pattern: "{controller=Material}/{action=Delete}/{id}");
+//});
 
 
 app.Run();

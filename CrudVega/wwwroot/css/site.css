@@ -165,3 +165,29 @@ input{
 .Material-Create-backBtn {
     margin-top: 15px;
 }
+
+/*Edit*/
+.Material-Edit-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Material-Edit-formSpace {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.Material-Edit-formData {
+    margin-bottom: 10px;
+}
+
+.Material-Edit-backBtn {
+    margin-top: 15px;
+}
+
+.Material-Edit-label {
+    padding: 0;
+    margin: 0;
+}

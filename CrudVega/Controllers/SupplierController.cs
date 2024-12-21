@@ -70,9 +70,9 @@ namespace CrudVega.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditSupplier(SupplierModel supplier)
+        public IActionResult UpdateSupplier(SupplierModel supplier)
         {
-            _supplierRepository.EditSupplier(supplier);
+            _supplierRepository.UpdateSupplier(supplier);
             return RedirectToAction("Index");
         }
     }

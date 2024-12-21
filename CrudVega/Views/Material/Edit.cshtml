@@ -11,22 +11,36 @@
 <h1>Editar Produto</h1>
 <div class="container Material-Create-container">
     <div class="row Material-Create-row">
-        <form asp-action="Create" method="post" class="col-7 class="Material-Create-formSpace">
+        <form asp-action="UpdateMaterial" method="post" class="col-7 Material-Create-formSpace">
             <div class="row">
-                <select class="form-select form-control-sm Material-Create-formData" aria-label="Default select example">
+                <select class="form-select form-control-sm Material-Create-formData" aria-label="Default select example" asp-for="IdSupplier">
                     <option selected>Fornecedor</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @if (ViewData["Suppliers"] != null)
+                    {
+                        var suppliers = ViewData["Suppliers"] as IEnumerable<SupplierModel>;
+                        foreach (var supplier in suppliers)
+                        {
+                            <option value="@supplier.Id">@supplier.Id.ToString() - @supplier.Name.ToString()</option>
+                        }
+                    }
                 </select>
-                <input class="form-control form-control-sm Material-Create-formData" type="text" placeholder="Código" asp-for="Code">
-                <input class="form-control form-control-sm Material-Create-formData" type="text" placeholder="Nome" asp-for="Name">
-                <input class="form-control form-control-sm Material-Create-formData" type="text" placeholder="Descrição" asp-for="Description">
-                <input class="form-control form-control-sm Material-Create-formData" type="text" placeholder="Código Fiscal" asp-for="FiscalCode">
-                <input class="form-control form-control-sm Material-Create-formData" type="text" placeholder="Espécie" asp-for="Specie">
+                <input class="form-control form-control-sm Material-Edit-formData" value="@Model.Code" type="text" placeholder="Código" asp-for="Code">
+                <input class="form-control form-control-sm Material-Edit-formData" value="@Model.Name" type="text" placeholder="Nome" asp-for="Name">
+                <input class="form-control form-control-sm Material-Edit-formData" value="@Model.Description" type="text" placeholder="Descrição" asp-for="Description">
+                <input class="form-control form-control-sm Material-Edit-formData" value="@Model.FiscalCode" type="text" placeholder="Código Fiscal" asp-for="FiscalCode">
+                <select class="form-select form-control-sm Material-Edit-formData" aria-label="Default select example" asp-for="Specie">
+                    <option value="@Model.Specie" selected>@Model.Specie.ToString()</option>
+                    <option value="Calcado">Calçado</option>
+                    <option value="Roupa">Roupa</option>
+                    <option value="Acessorio">Acessório</option>
+                    <option value="Equipamento">Equipamento</option>
+                </select>
+                <input value="@Model.Id" type="hidden" placeholder="Código Fiscal" asp-for="Id">
+                <input value="@Model.CreatedAt" type="hidden" placeholder="Código Fiscal" asp-for="CreatedAt">
+                <input value="@Model.CreatedBy" type="hidden" placeholder="Código Fiscal" asp-for="CreatedBy">
 
 
-                <button class="btn btn-success col-12" type="submit">Cadastrar</button>
+                <button class="btn btn-success col-12" type="submit">Salvar</button>
             </div>
         </form>
         <br />

@@ -19,20 +19,50 @@ namespace CrudVega.Repositories
             return material;
         }
 
+        public void DeleteMaterial(int id)
+        {
+            var material = GetMaterial(id);
+            if (material != null)
+            {
+                _context.Materials.Remove(material);
+                _context.SaveChanges();
+            }
+        }
+
         public IEnumerable<MaterialModel> GetAllMaterials()
         {
             return _context.Materials
-            .Select(p => new MaterialModel
+            .Select(m => new MaterialModel
             {
-                Name = p.Name,
-                IdSupplier = p.IdSupplier,
-                Code = p.Code,
-                FiscalCode = p.FiscalCode,
-                Specie = p.Specie,
-                CreatedAt = p.CreatedAt
+                Id = m.Id,
+                Name = m.Name,
+                IdSupplier = m.IdSupplier,
+                Code = m.Code,
+                FiscalCode = m.FiscalCode,
+                Specie = m.Specie,
+                CreatedAt = m.CreatedAt
             })
             .AsEnumerable();
+        }
 
+        public MaterialModel GetMaterial(int id)
+        {
+            var material = _context.Materials.SingleOrDefault(m => m.Id == id);
+                
+            if (material == null)
+            {
+                return null;
+            }
+            else
+            {
+                return material;
+            }
+        }
+
+        public void UpdateMaterial(MaterialModel material)
+        {
+            _context.Materials.Update(material);
+            _context.SaveChanges();
         }
     }
 }

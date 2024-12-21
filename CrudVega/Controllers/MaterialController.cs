@@ -29,14 +29,32 @@ namespace CrudVega.Controllers
             return View();
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            var material = _materialRepository.GetMaterial(id);
+            if (material != null)
+            {
+                IEnumerable<SupplierModel> suppliers = _supplierRepository.GetAllSuppliers();
+                ViewData["Suppliers"] = suppliers;
+                return View(material);
+            }
+            else
+            {
+                return View();
+            }
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            var material = _materialRepository.GetMaterial(id);
+            if (material != null)
+            {
+                return View(material);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
@@ -44,8 +62,27 @@ namespace CrudVega.Controllers
         {
             material.CreatedAt = DateTime.Now;
             material.CreatedBy = "Vinicius";
+            material.UpdatedAt = DateTime.Now;
+            material.UpdatedBy = "Vinícius";
 
             _materialRepository.CreateMaterial(material);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult UpdateMaterial(MaterialModel material)
+        {
+            material.UpdatedAt = DateTime.Now;
+            material.UpdatedBy = "Vinícius";
+            _materialRepository.UpdateMaterial(material);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteMaterial(int id)
+        {
+            _materialRepository.DeleteMaterial(id);
+
             return RedirectToAction("Index");
         }
     }

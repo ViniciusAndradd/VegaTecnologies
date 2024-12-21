@@ -1,5 +1,15 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Excluir Produto";
 }
+
+@model CrudVega.Models.MaterialModel
+
+<h1>Deseja excluir @Model.Name da lista de produtos?</h1>
+
+<form asp-action="DeleteMaterial" method="post">
+    <input type="hidden" value="@Model.Id" asp-for="Id" />
+    <button class="btn btn-danger col-12" type="submit">Excluir</button>
+</form>
+
+
+<a class="btn btn-secondary col-12" asp-controller="Material" asp-action="Index">Voltar</a>

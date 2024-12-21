@@ -30,7 +30,7 @@ namespace CrudVega.Repositories
             }
         }
 
-        public void EditSupplier(SupplierModel supplier)
+        public void UpdateSupplier(SupplierModel supplier)
         {
             _context.Suppliers.Update(supplier);
             _context.SaveChanges();
